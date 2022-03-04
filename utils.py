@@ -74,6 +74,7 @@ def remove_emojis(data):
 
 def preprocessingtext(text):
 
+
     # factory = StopWordRemoverFactory()
     # stopword = factory.create_stop_word_remover()
     # satu = stopword.remove(text)
