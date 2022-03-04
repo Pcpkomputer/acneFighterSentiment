@@ -117,6 +117,9 @@ def klasifikasicuitan():
 
         cuitan = request.form["cuitan"]
 
+        ## menambah preprocessing text pada klasifikasi cuitan/text
+        cuitan = preprocessingtext(cuitan)
+
         model, vectorizer = create_model_bydataset()
 
         x = vectorizer.transform([cuitan])
