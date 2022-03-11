@@ -1,7 +1,7 @@
 from os import remove
 import re
 from Sastrawi.StopWordRemover.StopWordRemoverFactory import StopWordRemoverFactory
-
+import tweepy
 
 from sklearn.model_selection import train_test_split
 from sklearn.feature_extraction.text import TfidfVectorizer
@@ -9,6 +9,19 @@ from sklearn.naive_bayes import MultinomialNB
 from sklearn.metrics import confusion_matrix
 
 from database.koneksi import mydb
+
+
+def get_client_tweepy():
+    consumer_key="FawnxxzzzRRTMsrEYE05nGQFP"
+    consumer_secret="b0C6px9oq09WtAldQa4mJvhJzJ4uR8uVMYgz4NTNm9XdQK9odB"
+    access_token="736732046584778752-8X5i2hHNTPbeejd1Y3z9bAOm4JruUVw"
+    access_token_secret="LYLhe8P8G1wWRtSBFuAmybz8oQXqYWXJHdCp2U8aiQViE"
+    auth = tweepy.OAuth1UserHandler(consumer_key, consumer_secret, access_token, access_token_secret)
+
+    api = tweepy.API(auth)
+
+    return api
+
 
 def create_model_bydataset():
 
